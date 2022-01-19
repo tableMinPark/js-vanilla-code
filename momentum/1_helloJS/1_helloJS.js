@@ -82,7 +82,8 @@ const player2 = {
 console.log(player2.name);
 player2.sayHello("sohyun");
 
-// homework //////////////////////////////////////////////////////////////
+
+// homework (function) ///////////////////////////////////////////////////
 const calculator = {
     add: function(a, b){
         console.log(a + b);
@@ -106,3 +107,56 @@ calculator.minus(2, 3);
 calculator.multiply(3, 4);
 calculator.divide(10, 2);
 calculator.pow(2, 3);
+
+
+// return ////////////////////////////////////////////////////////////////
+const age = 96;
+function calculateKrAge(age0fForeigner){
+    return age0fForeigner + 2;
+}
+
+const krAge = calculateKrAge(age);
+console.log(krAge);
+
+const calculator2 = {
+    add: function(a, b){
+        return a + b;
+    },
+    minus: function(a, b){
+        return a - b;
+    },
+    multiply: function(a, b){
+        return a * b;
+    },
+    divide: function(a, b){
+        return a / b;
+    },
+    pow: function(a, b){
+        return a ** b;
+    }
+}
+
+const addResult = calculator2.add(1, 2);
+const minusResult = calculator2.minus(addResult, 4);
+const multiplyResult = calculator2.multiply(addResult, minusResult);
+const divideResult = calculator2.divide(minusResult, multiplyResult);
+const powResult = calculator2.pow(divideResult, multiplyResult);
+
+
+// conditionals //////////////////////////////////////////////////////////
+const age2 = parseInt(prompt("How old are you?"));   // 문자를 parseInt에 넣으면 NaN이 나옴 (입력이 문자인지 숫자인지 판별가능)
+
+console.log(typeof age2);   // typeof : 변수의 타입을 확인할 수 있음
+console.log(isNaN(age2));
+
+if (isNaN(age2) || age2 < 0){
+    console.log("Please write a real positive number.");
+} else if (age2 < 18){
+    console.log("You are too young.");
+} else if (age2 >= 18 && age2 <= 50){
+    console.log("You can drink.");
+} else if (age2 > 50 && age2 <= 80){
+    console.log("You should exercise.");
+} else if (age2 > 80){
+    console.log("You can do whatever you want.");
+}
